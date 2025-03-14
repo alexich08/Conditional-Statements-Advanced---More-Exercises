@@ -1,0 +1,54 @@
+budget = float(input())
+category = str(input())
+group = int(input())
+
+vip_ticket = 499.99 * group
+normal_ticket = 249.99 * group
+
+money_left = 0.00
+
+
+if 1 <= group <= 4:
+    if category == "VIP":
+        transport = budget * 0.75
+        money_left = budget - transport - vip_ticket
+    elif category == "Normal":
+        transport = budget * 0.75
+        money_left = budget - transport - normal_ticket
+
+if 5 <= group <= 9:
+    if category == "VIP":
+        transport = budget * 0.60
+        money_left = budget - transport - vip_ticket
+    elif category == "Normal":
+        transport = budget * 0.60
+        money_left = budget - transport - normal_ticket
+
+if 10 <= group <= 24:
+    if category == "VIP":
+        transport = budget * 0.50
+        money_left = budget - transport - vip_ticket
+    elif category == "Normal":
+        transport = budget * 0.50
+        money_left = budget - transport - normal_ticket
+
+if 25 <= group <= 49:
+    if category == "VIP":
+        transport = budget * 0.40
+        money_left = budget - transport - vip_ticket
+    elif category == "Normal":
+        transport = budget * 0.40
+        money_left = budget - transport - normal_ticket
+
+if group >= 50:
+    if category == "VIP":
+        transport = budget * 0.25
+        money_left = budget - transport - vip_ticket
+    elif category == "Normal":
+        transport = budget * 0.25
+        money_left = budget - transport - normal_ticket
+
+if money_left >= 0:
+    print(f"Yes! You have {money_left:.2f} leva left.")
+else:
+    print(f"Not enough money! You need {abs(money_left):.2f} leva.")

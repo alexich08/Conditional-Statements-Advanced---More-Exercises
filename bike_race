@@ -1,0 +1,31 @@
+young_cyclists = int(input())
+
+elder_cyclists = int(input())
+
+trace = input()
+
+tax_1 = 0.00
+tax_2 = 0.00
+
+together = young_cyclists + elder_cyclists # for discount
+
+if trace == "trail":
+    tax_1 = 5.50 * young_cyclists
+    tax_2 = 7 * elder_cyclists
+elif trace == "cross-country":
+    tax_1 = 8 * young_cyclists
+    tax_2 = 9.50 * elder_cyclists
+    if together >= 50:
+        tax_1 = 6 * young_cyclists  # 25% off
+        tax_2 = 7.125 * elder_cyclists  # 25 off
+elif trace == "downhill":
+    tax_1 = 12.25 * young_cyclists
+    tax_2 = 13.75 * elder_cyclists
+elif trace == "road":
+    tax_1 = 20 * young_cyclists
+    tax_2 = 21.50 * elder_cyclists
+
+total = tax_1 + tax_2
+money_left = total - 0.05 * total
+
+print(f"{money_left:.2f}")

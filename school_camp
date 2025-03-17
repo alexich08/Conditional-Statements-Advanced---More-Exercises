@@ -1,0 +1,38 @@
+season = input()
+km_per_month = float(input())
+
+total = 0.00
+
+if season == "Spring" or season == "Autumn":
+    if km_per_month <= 5000:
+        lv_km = 0.75
+        total = (lv_km * km_per_month) * 4
+    elif km_per_month <= 10000:
+        lv_km = 0.95
+        total = (lv_km * km_per_month) * 4
+
+elif season == "Summer":
+    if km_per_month <= 5000:
+        lv_km = 0.90
+        total = (lv_km * km_per_month) * 4
+    elif km_per_month <= 10000:
+        lv_km = 1.10
+        total = (lv_km * km_per_month) * 4
+
+elif season == "Winter":
+    if km_per_month <= 5000:
+        lv_km = 1.05
+        total = (lv_km * km_per_month) * 4
+    elif km_per_month <= 10000:
+        lv_km = 1.25
+        total = (lv_km * km_per_month) * 4
+
+if season and 10000 < km_per_month <= 20000:
+    lv_km = 1.45
+    total = (lv_km * km_per_month) * 4
+
+
+fee = total - 0.10 * total
+total_after_fee = fee
+
+print(f"{total_after_fee:.2f}")

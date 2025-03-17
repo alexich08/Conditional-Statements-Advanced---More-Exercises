@@ -1,0 +1,61 @@
+season = input()
+group_type = input()
+students_amount = int(input())
+nights_amount = int(input())
+
+sport = ""
+total = 0.00
+
+if group_type == "girls":
+    if season == "Winter":
+        night_tax = 9.60
+        sport = "Gymnastics"
+        total = students_amount * nights_amount * night_tax
+    elif season == "Spring":
+        night_tax = 7.20
+        sport = "Athletics"
+        total = students_amount * nights_amount * night_tax
+    elif season == "Summer":
+        night_tax = 15
+        sport = "Volleyball"
+        total = students_amount * nights_amount * night_tax
+
+elif group_type == "boys":
+    if season == "Winter":
+        night_tax = 9.60
+        sport = "Judo"
+        total = students_amount * nights_amount * night_tax
+    elif season == "Spring":
+        night_tax = 7.20
+        sport = "Tennis"
+        total = students_amount * nights_amount * night_tax
+    elif season == "Summer":
+        night_tax = 15
+        sport = "Football"
+        total = students_amount * nights_amount * night_tax
+
+elif group_type == "mixed":
+    if season == "Winter":
+        night_tax = 10
+        sport = "Ski"
+        total = students_amount * nights_amount * night_tax
+    elif season == "Spring":
+        night_tax = 9.50
+        sport = "Cycling"
+        total = students_amount * nights_amount * night_tax
+    elif season == "Summer":
+        night_tax = 20
+        sport = "Swimming"
+        total = students_amount * nights_amount * night_tax
+
+if 10 <= students_amount < 20:
+    discount = 0.05 * total
+    total = total - discount
+elif 20 <= students_amount < 50:
+    discount = 0.15 * total
+    total = total - discount
+elif students_amount >= 50:
+    discount = 0.50 * total
+    total = total - discount
+
+print(f"{sport} {total:.2f} lv.")
